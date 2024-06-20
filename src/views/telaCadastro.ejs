@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<section class="container">
+<!--Tela de Cadastro -->
+    <div class="tela-cadastro ">
+         <form class="FormCadastro" action="/cadastro" method="post" >
+            <div class="input-wrapper">
+                <label for="name">Nome e Sobrenome </label><br>
+                <input type="text" name="name" id="name" placeholder="nome e sobrenome"><br>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="usuario">Usuário</label><br>
+                <input type="text" name="usuario" id="usuario" placeholder="usuario" maxlength="10"><br>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="email">E-mail</label><br>
+                <input type="email" name="email" id="email" placeholder="email@email.com"><br>
+            </div>
+
+             <div class="input-wrapper">
+                <label for="phone">Telefone</label><br>
+                <input type="tel" name="phone" id="phone" placeholder="(00) 00000-0000" maxlength="14"><br>
+
+            </div>
+
+            <button class="cadastro-button">Cadastrar</button>
+        </form>
+</div>
+</section>
+
+
+<script src="./assets/js/bundle.js"></script>
+</body>
+</html>
