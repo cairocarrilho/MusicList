@@ -15,13 +15,9 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 // Conexao de metodos junto ao banco de dados para salvar cookies, flash mensage  e sessoes.
 const session = require('express-session');// chavar o cookies do cliente no proprio computador do cliente
 const flash = require('connect-flash');// Enviar mensagem de feedback ou de erro, salvos em session
-const {connectDB}  = require('connect-pg-simple')(session);
+const connectDB  = require('connect-pg-simple')(session);
 
 const sessionOptions = session({
-    store: new connectDB({
-        pool: connectDB,// ou onde quer que você tenha configurado o pool de conexão
-        tableName: 'session' // nome da tabela onde as sessões serão armazenadas no PostgreSQL
-    }),
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
