@@ -38,7 +38,7 @@ db.connect()
 
 app.on('conectado', () => {
     app.listen(3000, () => {
-        console.log('Servidor iniciado em http://localhost:3000/login');
+        console.log('Servidor iniciado em http://localhost:3000/');
     });
 });
 
@@ -63,3 +63,7 @@ app.use(helmet());
 const csrf = require('csurf');
 app.use(csrf());
 
+//Middleware
+const { checkError, csrfMiddleware } = require('./src/middlewares/middlewares');
+app.use(checkError);
+app.use(csrfMiddleware);

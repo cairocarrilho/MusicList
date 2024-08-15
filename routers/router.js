@@ -1,19 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const pagePesquisa = require("../src/controllers/homePesquisa");
-const pageCadastro = require('../src/controllers/homeCadastro')
-const pageLogin = require('../src/controllers/homeLogin');
+const loginController = require('../src/controllers/loginController')
+const homeController = require('../src/controllers/homeController');
 
-// Router de Login
-router.get('/login' ,pageLogin.login)
+// Router Home
+router.get('/' ,homeController.index)
 
-//Router de Pesquisa
-router.get('/pesquisa',pagePesquisa.pesquisa)
-
-//Router de cadastro
-router.get('/cadastro' , pageCadastro.login)
-router.post('/cadastro' , pageCadastro.cadastro)
-
+router.get('/login/index' ,loginController.login)
+router.post('/login/register', loginController.register)
 
 
 
